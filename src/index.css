@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enhanced Input Styling */
+.input-styled {
+  @apply 
+    w-full 
+    px-3 
+    py-2 
+    border 
+    border-gray-300 
+    rounded-md 
+    shadow-sm 
+    focus:outline-none 
+    focus:ring-2 
+    focus:ring-blue-500 
+    focus:border-blue-500 
+    transition-all 
+    duration-300 
+    text-gray-900 
+    placeholder-gray-400 
+    bg-white;
+}
+
+/* Enhanced Select Styling */
+.select-styled {
+  @apply 
+    w-full 
+    px-3 
+    py-2 
+    border 
+    border-gray-300 
+    rounded-md 
+    shadow-sm 
+    focus:outline-none 
+    focus:ring-2 
+    focus:ring-blue-500 
+    focus:border-blue-500 
+    transition-all 
+    duration-300 
+    text-gray-900 
+    bg-white 
+    cursor-pointer;
+}
+
+/* Optional: Hover effect */
+.input-styled:hover,
+.select-styled:hover {
+  @apply 
+    border-gray-400;
+}
+
+/* Improved Date Input Styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  @apply 
+    cursor-pointer 
+    text-gray-600 
+    hover:text-blue-600;
+}
