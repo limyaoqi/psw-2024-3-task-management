@@ -109,7 +109,7 @@ function App() {
     }, {} as Record<Task["priority"], Task[]>);
   }, [tasks]);
 
-  const priorityOrder = ["High", "Medium", "Low"];
+  const priorityOrder: Task["priority"][] = ["High", "Medium", "Low"];
 
   return (
     <div className="container mx-auto p-4 space-y-6 max-w-4xl">
@@ -192,14 +192,16 @@ function App() {
                       >
                         {priorityLevel} Priority Tasks
                       </h2>
-                      {groupedTasks[priorityLevel].map((task) => (
-                        <TaskCard
-                          key={task.id}
-                          task={task}
-                          onEdit={editTask}
-                          onDelete={deleteTask}
-                        />
-                      ))}
+                      {groupedTasks[priorityLevel as Task["priority"]].map(
+                        (task: Task) => (
+                          <TaskCard
+                            key={task.id}
+                            task={task}
+                            onEdit={editTask}
+                            onDelete={deleteTask}
+                          />
+                        )
+                      )}
                     </div>
                   )
               )}
